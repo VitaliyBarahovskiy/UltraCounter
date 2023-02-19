@@ -1,5 +1,6 @@
 {
   "name": "counter",
+  "homepage": "http://VitaliyBarahovskiy.github.io/UltraCounter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.39"
+    "@types/react": "^17.0.39",
+    "gh-pages": "^5.0.0"
   }
 }

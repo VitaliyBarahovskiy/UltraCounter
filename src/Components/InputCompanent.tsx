@@ -7,6 +7,7 @@ type InputType = {
     value: number,
     Focus: any,
     setValue: (value: number)=>void
+    inputError: string
 }
 
 

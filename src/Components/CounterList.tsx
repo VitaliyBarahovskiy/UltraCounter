@@ -12,13 +12,12 @@ const useTypeSelector:TypedUseSelectorHook<RootState> = useSelector
 
 const CounterList: React.FC = ()=> {
 
-    useEffect(  () => {} , [])
-
 
     const {count,payload, maxValue, minValue} = useTypeSelector(state => state.counter )
-
-
     const dispatch = useDispatch()
+
+
+
 
     const addCount = () => {
         if ( count < maxValue){
@@ -33,13 +32,12 @@ const CounterList: React.FC = ()=> {
 
 
 
-
     return (
         <div>
                 <div className={s.counter}>
                     <button className={s.buttonClick} onClick={addCount}>inc</button>
                     <div className={s.count}>{count}</div>
-                    <button className={s.buttonClick} onClick={addDelete}>reset</button>
+                    <button  className={s.buttonClick} onClick={addDelete}>reset</button>
                 </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import {Dispatch} from "redux";
 
 
 
@@ -52,7 +53,11 @@ export const  InputCountAC = (minValue: number, maxValue: number) => {
     return {type: 'INPUT_COUNT', payload: {minValue, maxValue}} as const
 }
 
-
+export let InputCountThunk = (minValue: number, maxValue: number)=> (dispatch: Dispatch)=> {
+     dispatch(InputCountAC(minValue,  maxValue))
+        localStorage.setItem('minValue', JSON.stringify(minValue))
+        localStorage.setItem('maxValue', JSON.stringify(maxValue))
+}
 
 
 

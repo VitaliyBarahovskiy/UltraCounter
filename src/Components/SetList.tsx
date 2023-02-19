@@ -45,7 +45,9 @@ const SetList: React.FC = ()=> {
 
     return (
         <div className={s.input}>
+            Min Value
             <InputCompanent inputError={inputError} style={'ree'} type={'number'} value={InputValueMin} Focus={false} setValue={SetValueMin} />
+            Max Value
             <InputCompanent inputError={inputError} style={'str'} type={'number'} value={InputValueMax} Focus={true} setValue={SetValueMax} />
 
             <div >

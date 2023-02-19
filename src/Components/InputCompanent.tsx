@@ -1,4 +1,5 @@
 import {ChangeEvent} from "react";
+import s from "./Counter.module.css";
 
 type InputType = {
     style: string,
@@ -18,6 +19,6 @@ export const InputCompanent = ( props: InputType) => {
 
 
     return <div>
-        <input className={props.style} type={props.type} value={props.value} onChange={onChangeHandler} onFocus={props.Focus}/>
+        <input className={s.textInput} type={props.type} value={props.value} onChange={onChangeHandler} onFocus={props.Focus}/>
     </div>
 }

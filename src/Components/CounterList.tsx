@@ -1,6 +1,7 @@
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store/store";
 import React, {useEffect} from "react";
+import s from './Counter.module.css'
 
 
 const useTypeSelector:TypedUseSelectorHook<RootState> = useSelector
@@ -14,7 +15,9 @@ const CounterList: React.FC = ()=> {
     useEffect(  () => {} , [])
 
 
-    const {count,payload, minValue, maxValue} = useTypeSelector(state => state.counter )
+    const {count,payload, maxValue, minValue} = useTypeSelector(state => state.counter )
+
+
     const dispatch = useDispatch()
 
     const addCount = () => {
@@ -33,10 +36,10 @@ const CounterList: React.FC = ()=> {
 
     return (
         <div>
-                <div className="App">
-                    <button onClick={addCount}>inc</button>
-                    <div style={{fontSize:"3rem"}}>{count}</div>
-                    <button onClick={addDelete}>reset</button>
+                <div className={s.counter}>
+                    <button className={s.buttonClick} onClick={addCount}>inc</button>
+                    <div className={s.count}>{count}</div>
+                    <button className={s.buttonClick} onClick={addDelete}>reset</button>
                 </div>
         </div>
     )

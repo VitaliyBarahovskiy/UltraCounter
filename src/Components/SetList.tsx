@@ -1,14 +1,16 @@
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store/store";
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import {InputCompanent} from "./InputCompanent";
 import {InputCountAC} from "../Reducer/counterReducer";
+import s from './Counter.module.css'
+
 
 
 
 const useTypeSelector:TypedUseSelectorHook<RootState> = useSelector
 
-
+    // useEffect(  () => {localStorage.setItem()} , [])
 
 
 const SetList: React.FC = ()=> {
@@ -34,12 +36,12 @@ const SetList: React.FC = ()=> {
     }
 
     return (
-        <div>
+        <div className={s.input}>
             <InputCompanent style={'ree'} type={'number'} value={InputValueMin} Focus={false} setValue={SetValueMin} />
             <InputCompanent style={'str'} type={'number'} value={InputValueMax} Focus={true} setValue={SetValueMax} />
 
-            <div className="SetList">
-                <button onClick={SetCount}>set</button>
+            <div >
+                <button className={s.buttonClick} onClick={SetCount}>set</button>
             </div>
         </div>
             )

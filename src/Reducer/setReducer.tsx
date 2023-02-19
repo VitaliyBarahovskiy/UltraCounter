@@ -36,7 +36,6 @@ export const setReducer = (state= initialState,action: ActionType): initialState
     }
 };
 
-// BAGA
 
 
 const MaxValueAC = (set: [], error:boolean, payload: number) => {

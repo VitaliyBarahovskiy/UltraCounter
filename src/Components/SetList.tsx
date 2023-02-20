@@ -1,5 +1,5 @@
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
-import {RootState} from "../store/store";
+import {dispatchStore, RootState} from "../store/store";
 import React, {useEffect, useState} from "react";
 import {InputCompanent} from "./InputCompanent";
 import {InputCountAC, InputCountThunk} from "../Reducer/counterReducer";
@@ -9,9 +9,6 @@ import s from './Counter.module.css'
 
 
 const useTypeSelector:TypedUseSelectorHook<RootState> = useSelector
-
-    // useEffect(  () => {localStorage.setItem()} , [])
-
 
 const SetList: React.FC = ()=> {
 
@@ -36,8 +33,8 @@ const SetList: React.FC = ()=> {
     }, [])
 
     const SetCount = () => {
-        //@ts-ignore
-        dispatch(InputCountThunk(InputValueMin, InputValueMax))
+
+        dispatchStore(InputCountThunk(InputValueMin, InputValueMax))
        // dispatch(InputCountAC(InputValueMin, InputValueMax))
        //  localStorage.setItem('minValue', JSON.stringify(InputValueMin))
        //  localStorage.setItem('maxValue', JSON.stringify( InputValueMax))

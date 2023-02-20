@@ -7,7 +7,7 @@ export type ActionType = AddCountType | DeleteCountType | InputCountType
 
 type AddCountType = ReturnType<typeof AddCountAC>
 type DeleteCountType = ReturnType<typeof DeleteCountAC>
-type InputCountType = ReturnType<typeof InputCountAC>
+type InputCountType = ReturnType<typeof InputCountAC >
 
 type initialStateType = {
     count: number,
